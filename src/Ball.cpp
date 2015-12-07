@@ -22,7 +22,6 @@ void Ball::handleEvents(SDL_Event event)
 
 void Ball::wallCollision()
 {
-#if 1
   // if ball goes past walls on x-axis
   if(m_Space.x + m_Space.w <= 0 || m_Space.x >= Window::getWidth())
   {
@@ -30,15 +29,6 @@ void Ball::wallCollision()
     //m_xVelocity = 0;
     //m_yVelocity = 0;
   }
-#endif
-  
-#if 0
-  // FOR TESTING PURPOSES
-  if(m_Space.x <= 0 || m_Space.x + m_Space.w >= Window::getWidth())
-  {
-    m_xVelocity = -m_xVelocity;
-  }
-#endif
   
   
   // if ball hits wall on y-axis
@@ -47,7 +37,6 @@ void Ball::wallCollision()
     // y component of velocity switches signs
     m_yVelocity = -m_yVelocity;
   }
- 
 }
 
 
